@@ -1,4 +1,5 @@
 import React from 'react'
+import Typical from 'react-typical'
 
 function Profile() {
     return (
@@ -25,6 +26,36 @@ function Profile() {
                             Hello, I'm <span className='highlighted-text'>Sourav Shaw</span>
                         </span>
                     </div>
+                    <div className='profile-details-role'>
+                        <span className='primary-text'>
+                            {" "}
+                            <h1>
+                                {" "}
+                                <Typical
+                                loop={Infinity}
+                                steps={[
+                                    "Full Stack Developer",
+                                    1200,
+                                    "Computer Science Enthusiast",
+                                    1200,
+                                    "Mobile Photographer",
+                                    1200,
+                                ]}
+                                />
+                            </h1>
+                            <span className='profile-tagline'>
+                                Never dreamt to be a Full Stack Developer, but this moment makes me feel like a Pro !
+                            </span>
+                        </span>
+                    </div>
+                    <button className='btn primary-btn'>
+                        {" "}
+                        Hire Me
+                        {" "}
+                    </button>
+                    <a href="resume.pdf" download='Sourav Shaw Resume.pdf'>
+                        <button className='btn highlighted-btn'>Resume</button>
+                    </a>
                 </div>
             </div>
         </div>
