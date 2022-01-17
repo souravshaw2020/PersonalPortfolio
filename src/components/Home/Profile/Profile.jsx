@@ -1,12 +1,13 @@
 import React from 'react'
 import Typical from 'react-typical'
+import './Profile.css'
 
 function Profile() {
     return (
         <div className='profile-body'>
             <div className='profile-innerbody'>
                 <div className='profile-details'>
-                    <div className='social-app'>
+                    <div className='social-icon'>
                         <a href="https://www.facebook.com/sourav.shaw.98622">
                             <i className='fa fa-facebook-square'></i>
                         </a>
@@ -48,14 +49,19 @@ function Profile() {
                             </span>
                         </span>
                     </div>
-                    <button className='btn primary-btn'>
-                        {" "}
-                        Hire Me
-                        {" "}
-                    </button>
-                    <a href="resume.pdf" download='Sourav Shaw Resume.pdf'>
-                        <button className='btn highlighted-btn'>Resume</button>
-                    </a>
+                    <div className='profile-options'>
+                        <button className='btn primary-btn'>
+                            {" "}
+                            Hire Me
+                            {" "}
+                        </button>
+                        <a href="resume.pdf" download='Sourav Shaw Resume.pdf'>
+                            <button className='btn highlighted-btn'>Resume</button>
+                        </a>
+                    </div>
+                </div>
+                <div className='profile-picture'>
+                    <div className='profile-picture-background'></div>
                 </div>
             </div>
         </div>
