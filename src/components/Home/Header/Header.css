@@ -42,7 +42,8 @@
 }
 
 .selected-header-option {
-    color: cornflowerblue;
+    color: var(--dark-green);
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1110px) {
@@ -82,7 +83,7 @@
     }
 
     .selected-header-option {
-        color: var(--white);
+        color: var(--green);
     }
 
     .header-hamburger-bars {
