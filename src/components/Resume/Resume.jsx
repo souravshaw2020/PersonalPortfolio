@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utilities/ScrollService'
 import Animation from '../../utilities/Animation'
+import './Resume.css'
 
 function Resume(props) {
     const [selectedBulletIndex, setSelectBulletIndex] = useState(0);
@@ -21,33 +22,33 @@ function Resume(props) {
     const ResumeHeading = (props) => {
         return (
             <div className='resume-heading'>
-            <div className='resume-main-heading'>
-                <div className='heading-bullet'>
-                    <span> {
-                        props.heading ? props.heading : ""
-                    } </span>
-                    {
-                    props.fromDate && props.toDate ? (
-                        <div className='heading-date'>
-                            {
-                            props.fromDate + " - " + props.toDate
-                        } </div>
-                    ) : (
-                        <div></div>
-                    )
-                } </div>
+                <div className='resume-main-heading'>
+                    <div className='heading-bullet'></div>
+                    <span className='heading-main'> {
+                            props.heading ? props.heading : ""
+                        } </span>
+                        {
+                        props.fromDate && props.toDate ? (
+                            <div className='heading-date'>
+                                {
+                                props.fromDate + " - " + props.toDate
+                            } </div>
+                        ) : (
+                            <div></div>
+                        )
+                    }
+                </div>
                 <div className='resume-sub-heading'>
-                    <span>{
-                        props.subHeading ? props.subHeading : ''
-                    }</span>
-                </div>
-                <div className='resume-heading-description'>
-                    <span>{
-                        props.description ? props.description : ''
-                    }</span>
-                </div>
+                        <span>{
+                            props.subHeading ? props.subHeading : ''
+                        }</span>
+                    </div>
+                    <div className='resume-heading-description'>
+                        <span>{
+                            props.description ? props.description : ''
+                        }</span>
+                    </div>
             </div>
-        </div>
         )
     };
 
@@ -178,7 +179,7 @@ function Resume(props) {
                 toDate: "April, 2018"
             },
             description: "The aim of this project is to develop an online voting system for universities/colleges to build such application which can cast a vote to elect Captain and Vice-Captain of different houses.",
-            subHeading: "Technologies Used : Python - Tkinter, Java - Javafx"
+            subHeading: "Technologies Used : Python - Tkinter, Java - Javafx, SQLite3"
         }, {
             title: "How Nanotechnology can be used in Remote Health Monitoring ?",
             duration: {
@@ -196,16 +197,16 @@ function Resume(props) {
                 subHeading={"BACHELOR OF TECHNOLOGY IN COMPUTER SCIENCE AND ENGINEERING"}
                 fromDate={"July, 2017"}
                 toDate={"January, 2022"}/>
-            <ResumeHeading heading={"Douglas Memorial Higher Scecondary School, Barrackpore, Kolkata, India"}
+            <ResumeHeading heading={"Douglas Memorial Higher Secondary School, Barrackpore, Kolkata, India"}
                 subHeading={"HIGHER SECONDARY IN SCIENCE"}
                 fromDate={"March, 2016"}
                 toDate={"March, 2017"}/>
-            <ResumeHeading heading={"Douglas Memorial Higher Scecondary School, Barrackpore, Kolkata, India"}
+            <ResumeHeading heading={"Douglas Memorial Higher Secondary School, Barrackpore, Kolkata, India"}
                 subHeading={"SECONDARY"}
                 fromDate={"March, 2014"}
                 toDate={"March, 2015"}/>
         </div>,
-        <div className='resume-screen-body' key="work-experience">
+        <div className='resume-screen-body work-history-body' key="work-experience">
             <ResumeHeading heading={"DataGrokr Analytics Private Limited, Bangalore, India"}
                 subHeading={"SOFTWARE ENGINEER"}
                 fromDate={"January 19, 2022"}
@@ -259,12 +260,12 @@ function Resume(props) {
                                     width: skill.ratingPercentage + '%'
                                 }
                             }
-                            className='active-percentage'></div>
+                            className='active-percentage-bar'></div>
                     </div>
                 </div>
             ))
         } </div>,
-        <div className='resume-screen-body' key='projects'>
+        <div className='resume-screen-body projects-body' key='projects'>
             {
             projectDetails.map((projectDetails, index) => (
                 <ResumeHeading key={index}
@@ -286,7 +287,7 @@ function Resume(props) {
             ))
         } </div>,
         <div className='resume-screen-body' key='interests'>
-            <ResumeHeading heading="Music" description="Listening to soothing music makes my mind relax and releases stress"/><ResumeHeading heading="Billiards" description="Love to pot the balls inside the pockets"/><ResumeHeading heading="Mobile Photography" description="Clicking makes me feel warmth and loves to take an image of beauty of nature"/>
+            <ResumeHeading heading="Music" description="Listening to soothing music makes my mind relax and releases stress"/><ResumeHeading heading="Billiards" description="Love to pot the balls inside the pockets"/><ResumeHeading heading="Mobile Photography" description="Clicking makes me feel warmth and loves to take a visulas of nature which depicts its beauty"/>
         </div>,
     ];
 
@@ -316,7 +317,11 @@ function Resume(props) {
                             bullet.logoSrc
                         }`)
                     }
-                    alt="Loading Image"/>
+                    alt="Loading.."/>
+                <span className='bullet-label'>
+                    {
+                    bullet.label
+                }</span>
             </div>
         ))
     }
@@ -341,15 +346,23 @@ function Resume(props) {
             <div className='resume-content'>
                 <ScreenHeading title={'RESUME'}
                     subHeading={'My Formal Bio Details'}/>
-                <div className='resume-bullets'>
-                    <div className='bullet-body'>
-                        <div className='bullet-icons'>
-                            <div className='bullets'>{getBullets()}</div>
-                        </div>
-                    </div>
-                    <div className='resume-bullet-details'>{getResumeScreen()}</div>
-                </div>
             </div>
+            <div className='resume-card'>
+                    <div className='resume-bullets'>
+                        <div className='bullet-body'>
+                            <div className='bullet-icons'></div>
+                            <div className='bullets'>
+                                {
+                                getBullets()
+                            }</div>
+                        </div> 
+                    </div>
+                    <div className='resume-bullet-details'>
+                            {
+                            getResumeScreen()
+                        }
+                    </div>
+                </div>
         </div>
     )
 }
