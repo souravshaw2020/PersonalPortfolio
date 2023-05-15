@@ -95,28 +95,31 @@ function Resume(props) {
             ratingPercentage: 75
         }, {
             skill: "Node JS",
-            ratingPercentage: 68
+            ratingPercentage: 75
         }, {
             skill: "Express JS",
-            ratingPercentage: 65
+            ratingPercentage: 68
         }, {
             skill: "Mongo Db",
             ratingPercentage: 60
         }, {
             skill: "Oracle Db",
-            ratingPercentage: 75
+            ratingPercentage: 65
         }, {
             skill: "PostgreSql",
-            ratingPercentage: 70
+            ratingPercentage: 75
         }, {
             skill: "React JS",
-            ratingPercentage: 69
+            ratingPercentage: 75
         }, {
             skill: "C#",
-            ratingPercentage: 61
+            ratingPercentage: 60
         }, {
             skill: "AWS",
-            ratingPercentage: 67
+            ratingPercentage: 70
+        }, {
+            skill: "Azure",
+            ratingPercentage: 60
         },
     ];
 
