@@ -40,7 +40,7 @@ function ContactMe(props) {
                 props.id || ''
         }>
             <ScreenHeading subHeading={"Lets Keep In Touch"}
-                title={"Contact Me"}/>
+                title={"CONTACT ME"}/>
             <div className='central-form'>
                 <div className='col'>
                     <h2 className='title'>
