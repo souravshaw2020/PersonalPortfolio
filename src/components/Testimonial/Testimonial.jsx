@@ -5,13 +5,13 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animation from '../../utilities/Animation';
+import './Testimonial.css'
 
 function Testimonial(props) {
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeScreen !== props.id) 
             return;
         
-
         Animation.animations.fadeInScreen(props.id);
     };
 
@@ -28,10 +28,10 @@ function Testimonial(props) {
         smartSpeed: 1000,
         responsive: {
             0: {
-                items: 1,
+                items: 1
             },
             768: {
-                items: 1,
+                items: 1
             },
             1000: {
                 items: 3
@@ -56,8 +56,8 @@ function Testimonial(props) {
                                         <p>
                                             <i className='fa fa-quote-left'/>
                                             I patronized Ehizeex and when He delivered, I honestly
-                                             fell in love with the project He is a very honest guy and
-                                              he delivers ontime.
+                                                                                                                                                                                                                                                                         fell in love with the project He is a very honest guy and
+                                                                                                                                                                                                                                                                          he delivers ontime.
                                             <i className='fa fa-quote-right'/>
                                         </p>
                                         <ul className='stars list-unstyled'>
@@ -79,7 +79,10 @@ function Testimonial(props) {
                                         </ul>
                                     </div>
                                     <div className='client-info'>
-                                        <img src={require("../../assets/Testimonial/man.png")} alt="No Internet Connection" />
+                                        <img src={
+                                                require("../../assets/Testimonial/man.png")
+                                            }
+                                            alt="No Internet Connection"/>
                                         <h5>John Fernando</h5>
                                         <p>CEO InansGlobal</p>
                                     </div>
@@ -91,8 +94,8 @@ function Testimonial(props) {
                                         <p>
                                             <i className='fa fa-quote-left'/>
                                             I patronized Ehizeex and when He delivered, I honestly
-                                             fell in love with the project He is a very honest guy and
-                                              he delivers ontime.
+                                                                                                                                                                                                                                                                         fell in love with the project He is a very honest guy and
+                                                                                                                                                                                                                                                                          he delivers ontime.
                                             <i className='fa fa-quote-right'/>
                                         </p>
                                         <ul className='stars list-unstyled'>
@@ -114,7 +117,10 @@ function Testimonial(props) {
                                         </ul>
                                     </div>
                                     <div className='client-info'>
-                                        <img src={require("../../assets/Testimonial/lady.png")} alt="No Internet Connection" />
+                                        <img src={
+                                                require("../../assets/Testimonial/lady.png")
+                                            }
+                                            alt="No Internet Connection"/>
                                         <h5>Daisy Mardona</h5>
                                         <p>CEO Walmart</p>
                                     </div>
@@ -126,8 +132,8 @@ function Testimonial(props) {
                                         <p>
                                             <i className='fa fa-quote-left'/>
                                             I patronized Ehizeex and when He delivered, I honestly
-                                             fell in love with the project He is a very honest guy and
-                                              he delivers ontime.
+                                                                                                                                                                                                                                                                         fell in love with the project He is a very honest guy and
+                                                                                                                                                                                                                                                                          he delivers ontime.
                                             <i className='fa fa-quote-right'/>
                                         </p>
                                         <ul className='stars list-unstyled'>
@@ -149,7 +155,10 @@ function Testimonial(props) {
                                         </ul>
                                     </div>
                                     <div className='client-info'>
-                                        <img src={require("../../assets/Testimonial/mike.png")} alt="No Internet Connection" />
+                                        <img src={
+                                                require("../../assets/Testimonial/mike.png")
+                                            }
+                                            alt="No Internet Connection"/>
                                         <h5>Mike M</h5>
                                         <p>CEO PayU</p>
                                     </div>
@@ -160,6 +169,12 @@ function Testimonial(props) {
                     </div>
                 </div>
             </section>
+            <div className='footer-image'>
+                <img src={
+                        require("../../assets/Testimonial/shape-bg.png")
+                    }
+                    alt="No Internet Connection"/>
+            </div>
         </div>
     )
 }
