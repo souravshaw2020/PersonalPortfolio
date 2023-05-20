@@ -9,7 +9,7 @@ function Resume(props) {
     const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
     let fadeInScreenHandler = (screen) => {
-        if (screen.fadeScreen !== props.id) 
+        if (screen.fadeInScreen !== props.id) 
             return;
         
 

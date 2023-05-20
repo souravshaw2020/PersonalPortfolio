@@ -4,9 +4,9 @@ import Header from '../Home/Header/Header'
 import Profile from './Profile/Profile'
 import Footer from './Footer/Footer'
 
-function Home() {
+function Home(props) {
     return (
-        <div className='home-body'>
+        <div className='home-body' id={props.id || ""}>
             <Header/>
             <Profile/>
             <Footer/>

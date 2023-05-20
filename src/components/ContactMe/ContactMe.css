@@ -124,6 +124,35 @@ form {
     transform: scale(1.5);
 }
 
+.scroll-up {
+    display: flex;
+    justify-content: right;
+    justify-items: center;
+}
+
+.scroll-up-button {
+    position: relative;
+    border: none;
+    background: none;
+}
+
+.scroll-up-button:active, .scroll-up-button:focus {
+    position: relative;
+    border: none;
+    outline: none;
+}
+
+.fa-arrow-circle-up {
+    padding: 7px;
+    font-size: 40px;
+    color: var(--green);
+}
+
+.fa-arrow-circle-up:hover {
+    color: greenyellow;
+    transform: scale(1.5);
+}
+
 @media screen and (maxwidth: 940px) {
     .back-form {
         max-width: 1100px;

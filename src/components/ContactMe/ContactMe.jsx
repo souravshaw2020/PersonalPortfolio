@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import Typical from 'react-typical'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 import imgBack from '../../assets/ContactMe/images/mailz.jpeg'
 import load1 from '../../assets/ContactMe/images/load2.gif'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
@@ -10,7 +12,7 @@ import './ContactMe.css'
 function ContactMe(props) {
 
     let fadeInScreenHandler = (screen) => {
-        if (screen.fadeScreen !== props.id) 
+        if (screen.fadeInScreen !== props.id) 
             return;
         
 
@@ -32,6 +34,32 @@ function ContactMe(props) {
     }
     const handleMessage = (e) => {
         setMessage(e.target.value);
+    }
+
+    const submitForm = async (e) => {
+        e.preventDefault();
+        try {
+            let data = {
+                name,
+                email,
+                message
+            }
+
+            setBool(true);
+            const res = await axios.post('/contact', data);
+            if (name.length === 0 || email.length === 0 || message.length === 0) {
+                setBanner(res.data.msg)
+                toast.error(res.data.msg)
+                setBool(false)
+            }
+            else if (res.status === 200) {
+                setBanner(res.data.msg)
+                toast.success(res.data.msg)
+                setBool(false)
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
@@ -75,7 +103,7 @@ function ContactMe(props) {
                         <img src={imgBack}
                             alt="No Internet Connection"/>
                     </div>
-                    <form>
+                    <form onSubmit={submitForm}>
                         <p>{banner}</p>
                         <label htmlFor="name">Name</label>
                         <input type="text"
@@ -95,9 +123,19 @@ function ContactMe(props) {
                         <div className='send-btn'>
                             <button type='submit'>
                                 Send<i className='fa fa-paper-plane'/>
+                                {bool ? (<b className='load'>
+                                    <img src={load1} alt="No Internet Connection" />
+                                </b>) : ("")}
                             </button>
                         </div>
                     </form>
+                </div>
+                <div className='scroll-up'>
+                    <button className='scroll-up-button' onClick={() => ScrollService.scrollHandler.scrollToHome()}>
+                        {" "}
+                        <i className="fa fa-arrow-circle-up"></i>
+                        {" "}
+                    </button>
                 </div>
             </div>
         </div>
