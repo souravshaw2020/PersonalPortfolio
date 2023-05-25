@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://souravshaw.github.io",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "client": "npm start --prefix personal-portfolio-ui",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui"
+    "predeploy": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +21,8 @@
     "express": "^4.18.2",
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
