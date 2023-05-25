@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://souravshaw.github.io",
+  "homepage": "https://souravshaw2020.github.io/PersonalPortfolio",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "client": "npm start --prefix personal-portfolio-ui",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "predeploy": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui",
-    "deploy": "gh-pages -d build"
+    "build": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui && cp personal-portfolio-ui/build/index.html personal-portfolio-ui/build/404.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d personal-portfolio-ui/build"
   },
   "author": "",
   "license": "ISC",
