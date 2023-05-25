@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Typical from 'react-typical'
 import axios from 'axios'
 import { toast } from 'react-toastify'
@@ -15,7 +15,6 @@ function ContactMe(props) {
         if (screen.fadeInScreen !== props.id) 
             return;
         
-
         Animation.animations.fadeInScreen(props.id);
     };
 
@@ -25,6 +24,7 @@ function ContactMe(props) {
     const [message, setMessage] = useState("")
     const [banner, setBanner] = useState("")
     const [bool, setBool] = useState(false)
+    const [error, setError] = useState(false)
 
     const handleName = (e) => {
         setName(e.target.value);
@@ -51,11 +51,16 @@ function ContactMe(props) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
                 setBool(false)
+                setError(true)
             }
             else if (res.status === 200) {
                 setBanner(res.data.msg)
                 toast.success(res.data.msg)
                 setBool(false)
+                setError(false)
+                setName("")
+                setEmail("")
+                setMessage("")
             }
         } catch (error) {
             console.log(error);
@@ -104,7 +109,7 @@ function ContactMe(props) {
                             alt="No Internet Connection"/>
                     </div>
                     <form onSubmit={submitForm}>
-                        <p>{banner}</p>
+                        <p style={{ color: error ? "red" : "green"}}>{banner}</p>
                         <label htmlFor="name">Name</label>
                         <input type="text"
                             onChange={handleName}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utilities/ScrollService'
 import Animation from '../../utilities/Animation'
@@ -290,7 +290,7 @@ function Resume(props) {
             ))
         } </div>,
         <div className='resume-screen-body' key='interests'>
-            <ResumeHeading heading="Music" description="Listening to soothing music makes my mind relax and releases stress"/><ResumeHeading heading="Billiards" description="Love to pot the balls inside the pockets"/><ResumeHeading heading="Mobile Photography" description="Clicking makes me feel warmth and loves to take a visulas of nature which depicts its beauty"/>
+            <ResumeHeading heading="Music" description="Listening to soothing music makes my mind relax and releases stress"/><ResumeHeading heading="Billiards" description="Love to pot the balls inside the pockets"/><ResumeHeading heading="Mobile Photography" description="Clicking makes me feel warmth and loves to take a visuals of nature which depicts its beauty"/>
         </div>,
     ];
 

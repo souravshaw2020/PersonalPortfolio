@@ -6,13 +6,15 @@ import './AboutMe.css'
 
 function AboutMe(props) {
     let fadeInScreenHandler = (screen) => {
+        
         if(screen.fadeInScreen !== props.id)
             return;
+
         Animation.animations.fadeInScreen(props.id);
     };
 
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
-
+    let fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    
     const SCREEN_CONSTANTS = {
         description: "Full Stack Web Developer with a vast set of knowledge in many different Frontend & Backend Languages, Frameworks, Databases as well as Cloud Services. Other than, I'm passionate and ambitious about my work and love to be on a team where one questions every possibilities. Always eager to learn new technologies, ready to grasp different kind of methodologies and also willing to take part in innovation which can improve the existing skills.",
         highlights: {

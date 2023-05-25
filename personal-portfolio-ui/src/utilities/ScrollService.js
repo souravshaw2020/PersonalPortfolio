@@ -8,7 +8,7 @@ export default class ScrollService {
     static currentScreenFadeIn = new Subject()
 
     constructor() {
-        window.addEventListener('scroll', this.checkCurrentScreenUnderViewport);
+        window.addEventListener("scroll", this.checkCurrentScreenUnderViewport);
     }
 
     scrollToHireMe = () => {
@@ -52,11 +52,11 @@ export default class ScrollService {
             let partiallyVisible = this.isElementInView(screenFromDOM, "partial");
 
             if(fullyVisible || partiallyVisible) {
-                if(partiallyVisible && !screen.alreadRendered) {
+                if(partiallyVisible && !screen.alreadyRendered) {
                     ScrollService.currentScreenFadeIn.next({
-                        fadeInScreen: screen.screen_name
+                        fadeInScreen: screen.screen_name,
                     });
-                    screen['alreadyRendered'] = true;
+                    screen["alreadyRendered"] = true;
                     break;
                 }
                 if(fullyVisible) {
