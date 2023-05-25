@@ -1,7 +1,7 @@
 {
     "name": "personal-portfolio-ui",
-    "homepage":".",
-    "proxy": "*",
+    "homepage":"https://souravshaw2020.github.io/PersonalPortfolio/",
+    "proxy": "https://souravshaw2020.github.io/PersonalPortfolio",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
