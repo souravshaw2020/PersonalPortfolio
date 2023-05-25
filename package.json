@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix personal-portfolio-ui",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui && cp personal-portfolio-ui/build/index.html personal-portfolio-ui/build/404.html",
+    "build": "set NPM_CONFIG_PRODUCTION=false npm install --prefix personal-portfolio-ui && npm run build --prefix personal-portfolio-ui && copy personal-portfolio-ui/build/index.html personal-portfolio-ui/build/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d personal-portfolio-ui/build"
   },
