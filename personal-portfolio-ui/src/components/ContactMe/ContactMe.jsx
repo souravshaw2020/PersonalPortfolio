@@ -47,8 +47,6 @@ function ContactMe(props) {
 
             setBool(true);
             const res = await axios.post('/contact', data);
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Methods", "POST");
             if (name.length === 0 || email.length === 0 || message.length === 0) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
@@ -110,7 +108,7 @@ function ContactMe(props) {
                         <img src={imgBack}
                             alt="No Internet Connection"/>
                     </div>
-                    <form onSubmit={submitForm}>
+                    <form onSubmit={submitForm} method="POST" action='/contact'>
                         <p style={{ color: error ? "red" : "green"}}>{banner}</p>
                         <label htmlFor="name">Name</label>
                         <input type="text"
