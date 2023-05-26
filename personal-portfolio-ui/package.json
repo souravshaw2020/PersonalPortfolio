@@ -1,7 +1,7 @@
 {
     "name": "personal-portfolio-ui",
-    "homepage":"https://souravshaw2020.github.io/PersonalPortfolio/",
-    "proxy": "https://souravshaw2020.github.io/PersonalPortfolio",
+    "homepage": "https://souravshaw2020.github.io/PersonalPortfolio/",
+    "proxy": "*",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -17,6 +17,7 @@
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
         "react-owl-carousel": "^2.3.3",
+        "react-router-dom": "^6.11.2",
         "react-scripts": "^5.0.1",
         "react-toastify": "^9.1.3",
         "react-typical": "^0.1.3",
