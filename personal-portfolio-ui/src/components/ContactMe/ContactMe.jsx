@@ -46,7 +46,7 @@ function ContactMe(props) {
             }
 
             setBool(true);
-            const res = await axios.post('/PersonalPortfolio/contact', data);
+            const res = await axios.post('/contact', data);
             res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Methods", "POST");
             if (name.length === 0 || email.length === 0 || message.length === 0) {
