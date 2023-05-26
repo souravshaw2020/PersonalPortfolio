@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 
 router.post('/contact', (req, res) => {
     let data = req.body;
+    res.header("Access-Control-Allow-Origin", "*");
     if(data.name.length === 0 || data.email.length === 0 || data.message.length === 0) {
         return res.json({msg: 'Please Fill all the Fields'})
     }
