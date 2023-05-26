@@ -46,7 +46,13 @@ function ContactMe(props) {
             }
 
             setBool(true);
-            const res = await axios.post('/contact', data);
+            const headers = {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "POST"
+            }
+            const res = await axios.post('/contact', data, {
+                headers: headers
+            });
             if (name.length === 0 || email.length === 0 || message.length === 0) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
