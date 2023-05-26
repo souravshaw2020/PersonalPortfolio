@@ -46,10 +46,9 @@ function ContactMe(props) {
             }
 
             setBool(true);
-            const res = await axios.post('/contact', data);
+            const res = await axios.post('/PersonalPortfolio/contact', data);
             res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Methods", "POST");
-            res.header("Access-Control-Allow-Headers", req.header('access-control-request-headers'));
             if (name.length === 0 || email.length === 0 || message.length === 0) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
