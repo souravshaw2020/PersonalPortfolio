@@ -3,9 +3,6 @@ const nodemailer = require('nodemailer');
 
 router.post('/contact', (req, res) => {
     let data = req.body;
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "POST");
-    res.header("Access-Control-Allow-Headers", req.header('access-control-request-headers'));
     if(data.name.length === 0 || data.email.length === 0 || data.message.length === 0) {
         return res.json({msg: 'Please Fill all the Fields'})
     }
@@ -15,13 +12,13 @@ router.post('/contact', (req, res) => {
         port: 465,
         auth: {
             user: process.env.USER,
-            pass: process.env.PASS
+            pass: process.env.PASS,
         }
     })
 
     let mailOptions = {
         from: data.email,
-        to: 'souravshaw2020@gmail.com',
+        to: process.env.USER,
         subject: `Message from ${data.name}`,
         html: `
         
@@ -37,7 +34,7 @@ router.post('/contact', (req, res) => {
 
     smtpTransporter.sendMail(mailOptions, (error) => {
         try {
-            if (error) return res.status(400).json({msg: 'Plesae Fill all the Fields'});
+            if (error) return res.status(400).json({msg: 'Please Fill all the Fields'});
             res.status(200).json({msg: 'Thank you for contacting, Sourav..'});
         }
         catch (error) {

@@ -44,15 +44,11 @@ function ContactMe(props) {
                 email,
                 message
             }
-
+            
             setBool(true);
-            const headers = {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "POST"
-            }
-            const res = await axios.post('/contact', data, {
-                headers: headers
-            });
+            
+            const res = await axios.post('/contact', data);
+            console.log(res);
             if (name.length === 0 || email.length === 0 || message.length === 0) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
@@ -62,6 +58,15 @@ function ContactMe(props) {
             else if (res.status === 200) {
                 setBanner(res.data.msg)
                 toast.success(res.data.msg)
+                setBool(false)
+                setError(false)
+                setName("")
+                setEmail("")
+                setMessage("")
+            }
+            else if (res.status === 400) {
+                setBanner(res.data.msg)
+                toast.error(res.data.msg)
                 setBool(false)
                 setError(false)
                 setName("")
@@ -114,7 +119,7 @@ function ContactMe(props) {
                         <img src={imgBack}
                             alt="No Internet Connection"/>
                     </div>
-                    <form onSubmit={submitForm} method="POST" action='/contact'>
+                    <form onSubmit={submitForm}>
                         <p style={{ color: error ? "red" : "green"}}>{banner}</p>
                         <label htmlFor="name">Name</label>
                         <input type="text"

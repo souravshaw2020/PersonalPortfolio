@@ -1,8 +1,11 @@
 {
     "name": "personal-portfolio-ui",
-    "homepage": "https://souravshaw2020.github.io/PersonalPortfolio",
     "proxy": "http://localhost:5000",
     "version": "0.1.0",
+    "engines": {
+        "npm": "9.6.7",
+        "node": "18.16.0"
+        },
     "private": true,
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
