@@ -213,18 +213,39 @@ function Resume(props) {
             <ResumeHeading heading={"DataGrokr Analytics Private Limited, Bangalore, India"}
                 subHeading={"SOFTWARE ENGINEER"}
                 fromDate={"January 19, 2022"}
-                toDate={"Present"}/>
+                toDate={"April 10, 2023"}/>
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                    Currently Working in a project called Oktamate
+                    Worked as a Full Stack Developer
                 </span>
             </div>
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                    - This is a project where we are creating a subsystem with some smaller chunks while using the services of AWS
+                    - Worked on project called OKTA where we are creating a subsystem with some smaller chunks while using the services of AWS
                 </span>
                 <span className='resume-description-text'>
-                    - A Proof of Concepts has been worked on by the team before the actual implementation of project
+                    - A Proof of Concepts has been worked on by the team before the actual implementation of project, OKTA
+                </span>
+                <span className='resume-description-text'>
+                - A SPA using OKTA Authentication, AWS Services with CDK, Rest APIs and Splunk for customer IDPs Management of Federated Users
+                </span>
+                <span className='resume-description-text'>
+                    - Worked on a project called CloudScout where we are creating a SAAS Serverless Application of Auditing using TypeScript, Angular, TypeORM, and AWS
+                </span>
+                <span className='resume-description-text'>
+                    - A Proof of Concepts has been done on Service Now where created Catalogs
+                </span>
+                <span className='resume-description-text'>
+                    - Worked on a project called Appraisal Management System where mostly worked on APIs side with REST alongwith created Modal using Material UI using React JS
+                </span>
+                <span className='resume-description-text'>
+                    - In Appraisal Management System Project, worked on appraisal cycles management for both current and previous cycle with databases handling
+                </span>
+                <span className='resume-description-text'>
+                    - Migrated whole application from AWS Services to Azure and automated the deployment with CI/CD Pipelines using Azure DevOps in a project, Appraisal Management System
+                </span>
+                <span className='resume-description-text'>
+                    - Worked on a project called Talent Savvy, where created a wireframe design of SPA - Vendor Management using Figma
                 </span>
             </div>
             <ResumeHeading heading={"DataGrokr Analytics Private Limited, Bangalore, India"}
@@ -233,7 +254,7 @@ function Resume(props) {
                 toDate={"January 18, 2022"}/>
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                    Currently Working as a Full Stack Intern
+                    Worked as a Full Stack Intern
                 </span>
             </div>
             <div className='experience-description'>
